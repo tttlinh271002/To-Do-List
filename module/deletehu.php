@@ -1,6 +1,5 @@
 <?php
 include 'database.php';
-
 if (isset($_GET["id"])) {
 	$id = $_GET["id"];
 	$sql = "DELETE FROM `list` WHERE `list`.`id` = $id";
