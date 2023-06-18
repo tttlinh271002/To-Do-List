@@ -1,0 +1,95 @@
+.fa-check-circle{
+    color: #28a745;
+}
+.fa-check-circle:hover{
+    color:#fff !important;
+}
+.btn-icon:hover + .fa-check-circle{
+    color:#fff !important;
+}
+.btn-icon:hover{
+    color:#fff !important;
+}
+
+/* ------------------------------------------HEADER------------------------------------------------------ */
+
+#model{
+    background : rgba(0,0,0,0.95);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: none;
+}
+#modelform{
+    background: #fff;
+    width: 30%;
+    position: relative;
+    top: 20%;
+    left: calc(50% - 15%);
+    padding: 15px;
+    border-right: 4px;
+    border-radius: 5px;
+
+}
+#closebtn{
+    background-color: red;
+    color: white;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    cursor: pointer;
+
+}
+#modelform h2{
+    margin: 0 0 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+.modeledit{
+    background : rgba(0,0,0,0.95);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: none;
+}
+.modelformedit{
+    background: #fff;
+    width: 30%;
+    position: relative;
+    top: 20%;
+    left: calc(50% - 15%);
+    padding: 15px;
+    border-right: 4px;
+    border-radius: 5px;
+
+}
+.closebtn{
+    background-color: red;
+    color: white;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    cursor: pointer;
+
+}
+.modelformedit h2{
+    margin: 0 0 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+}
