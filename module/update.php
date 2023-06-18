@@ -1,6 +1,6 @@
 <?php
 
-include 'database.php';
+include '../database.php';
 
 $id = $_POST["id"];
 $sql = "SELECT * FROM list WHERE id = '$id'";
