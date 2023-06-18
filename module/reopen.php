@@ -1,5 +1,4 @@
 <?php
-
 include '../database.php';
 
 if (isset($_GET["id"])) {
