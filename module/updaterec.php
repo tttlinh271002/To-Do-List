@@ -1,5 +1,5 @@
 <?php
-include 'database.php';
+include '../database.php';
 
 $id = $_POST["id"];
 $title = $_POST["title"];
@@ -14,4 +14,3 @@ else{
 	echo 0;
 }
 ?>
-
