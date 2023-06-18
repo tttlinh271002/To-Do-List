@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <?php include 'database.php'; ?>
@@ -192,11 +191,11 @@
 
                                                                 
                                                                     <?php 
-                                                                    echo "<a href='delete.php?id=" . $row["id"] . "' class='mr-2 btn-icon btn-icon-only btn btn-outline-danger'><i class='fa fa-trash' aria-hidden='true'></i></a>";
+                                                                    echo "<a href='module/delete.php?id=" . $row["id"] . "' class='mr-2 btn-icon btn-icon-only btn btn-outline-danger'><i class='fa fa-trash' aria-hidden='true'></i></a>";
                                                                     ?>
 
                                                                     <?php 
-                                                                    echo "<a href='complet.php?id=" . $row["id"] . "' class='mr-2 btn-icon btn-icon-only btn btn-outline-success'><i class='fa fa-check-circle'> </i></a>";
+                                                                    echo "<a href='module/complet.php?id=" . $row["id"] . "' class='mr-2 btn-icon btn-icon-only btn btn-outline-success'><i class='fa fa-check-circle'> </i></a>";
                                                                     ?>
                 
                                                                 </td>
@@ -274,10 +273,10 @@
                                                            
                                                             <td class="text-center">
                                                                 <?php 
-                                                                    echo "<a href='reopen.php?id=" . $row["id"] . "' class='mr-2 btn-icon btn-icon-only btn btn-outline-info'>Reopen</a>";
+                                                                    echo "<a href='module/reopen.php?id=" . $row["id"] . "' class='mr-2 btn-icon btn-icon-only btn btn-outline-info'>Reopen</a>";
                                                                 ?>
                                                                 <?php 
-                                                                    echo "<a href='delete.php?id=" . $row["id"] . "' class='mr-2 btn-icon btn-icon-only btn btn-outline-danger'><i class='fa fa-trash' aria-hidden='true'></i></a>";
+                                                                    echo "<a href='module/delete.php?id=" . $row["id"] . "' class='mr-2 btn-icon btn-icon-only btn btn-outline-danger'><i class='fa fa-trash' aria-hidden='true'></i></a>";
                                                                 ?>
                                                             </td>
                                                         </tr>
@@ -407,7 +406,7 @@
             $('.modeledit').fadeIn(800); 
             var id = $(this).data('id');
             $.ajax({
-                url : 'update.php',
+                url : 'module/update.php',
                 type : 'POST',
                 data : {id:id},
                 success : function (data) {
@@ -420,10 +419,12 @@
             var id = $('#id').val();
             var title = $('#title').val();
             var description = $('#description').val();
+            var date = $('#date').val();
+            var piority = $('#piority').val();
             $.ajax({
-                url : 'updaterec.php',
+                url : 'module/updaterec.php',
                 type : 'POST',
-                data : {id:id,title:title,description:description},
+                data : {id:id,title:title,description:description,date:date,piority:piority},
                 success : function (data) {
                     if (data == 1) {
                         location.reload();
