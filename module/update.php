@@ -27,7 +27,7 @@ if (mysqli_num_rows($res)) {
    <div class="position-relative row form-group">
        <label class="col-sm-3 col-form-label">Due Date</label>
        <div class="col-sm-9">
-       <input name="date" style="width: 60%" type="date" value="<?php echo $row["date"] ?>" min="<?php echo date("Y-m-d") ?>" max="2023-08-26" step="1" class="form-control">
+       <input name="odate" id="odate" style="width: 60%" type="date" value="<?php echo $row["date"] ?>" min="<?php echo date("Y-m-d") ?>" max="2023-08-26" step="1" class="form-control">
        </div>
    </div>
 
