@@ -57,10 +57,10 @@
                                             if (isset($_POST['submit'])) {
                                                 $title = $_POST['title'];
                                                 $desc = $_POST['description'];
-                                                $date = $_POST['date'];
+                                                $odate = $_POST['odate'];
                                                 $piority = $_POST['piority'];
 
-                                                $sql = "INSERT INTO `list` (`id`, `title`, `description`, `user_id`, `date`, `piority`) VALUES (NULL, '$title', '$desc', '01', '$date', '$piority')";
+                                                $sql = "INSERT INTO `list` (`id`, `title`, `description`, `user_id`, `odate`, `piority`) VALUES (NULL, '$title', '$desc', '01', '$odate', '$piority')";
                                                 if (mysqli_query($conn, $sql)) {
                                                   echo '<div id="toast-container" class="toast-top-right"><div class="toast toast-success" aria-live="polite" style=""><div class="toast-progress" style="width: 0%;"></div><div class="toast-title">Task is set</div><div class="toast-message">Good luck!</div></div></div>';
                                                 } else {
@@ -94,7 +94,7 @@
                                                     <div class="position-relative row form-group">
                                                         <label class="col-sm-3 col-form-label">Due Date</label>
                                                         <div class="col-sm-9">
-                                                            <input name="date" style="width: 60%" type="date" min="<?php echo date("Y-m-d") ?>" max="2023-08-26" step="1" class="form-control">
+                                                            <input name="odate" style="width: 60%" type="date" min="<?php echo date("Y-m-d") ?>" max="2023-08-26" step="1" class="form-control">
                                                         </div>
                                                     </div>
                                                     <div class="position-relative row form-group">
@@ -136,7 +136,7 @@
                                                         </thead>
                                                         <tbody>
                                                             <?php 
-                                                                $sql1 = "SELECT * FROM list WHERE complet = '0' ORDER BY date ASC";
+                                                                $sql1 = "SELECT * FROM list WHERE complet = '0' ORDER BY odate ASC";
 
                                                                 $res = mysqli_query($conn , $sql1) or die("SQL Query Fail");
                                                                 if (mysqli_num_rows($res) > 0) {
@@ -224,7 +224,7 @@
                                                         <tbody>
 
                                                         <?php 
-                                                            $sql2 = "SELECT * FROM list WHERE complet = '1' ORDER BY id ASC";
+                                                            $sql2 = "SELECT * FROM list WHERE complet = '1' ORDER BY odate ASC";
 
                                                             $res = mysqli_query($conn , $sql2) or die("SQL Query Fail");
                                                                if (mysqli_num_rows($res) > 0) {
@@ -419,12 +419,12 @@
             var id = $('#id').val();
             var title = $('#title').val();
             var description = $('#description').val();
-            var date = $('#date').val();
+            var odate = $('#odate').val();
             var piority = $('#piority').val();
             $.ajax({
                 url : 'module/updaterec.php',
                 type : 'POST',
-                data : {id:id,title:title,description:description,date:date,piority:piority},
+                data : {id:id,title:title,description:description,odate:odate,piority:piority},
                 success : function (data) {
                     if (data == 1) {
                         location.reload();
